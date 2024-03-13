@@ -1,0 +1,136 @@
+        -:    0:Source:C:/Users/user/CLionProjects/POO_Lab_2-4/src/mylist.c
+        -:    0:Graph:C:\Users\user\CLionProjects\POO_Lab_2-4\cmake-build-debug-coverage\CMakeFiles\POO_Lab_2_4.dir\src\mylist.c.gcno
+        -:    0:Data:C:\Users\user\CLionProjects\POO_Lab_2-4\cmake-build-debug-coverage\CMakeFiles\POO_Lab_2_4.dir\src\mylist.c.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by user on 3/13/2024.
+        -:    3://
+        -:    4:#include "../header/mylist.h"
+        -:    5:
+        -:    6:#include <assert.h>
+        -:    7:
+        -:    8:/**
+        -:    9: * Initializes a new empty list
+        -:   10: * @return created list
+        -:   11: */
+function create called 5 returned 100% blocks executed 100%
+        5:   12:MyList create() {
+        -:   13:	MyList rez;
+        5:   14:	rez.len = 0;
+        5:   15:	return rez;
+        5:   15-block  0
+        -:   16:}
+        -:   17:
+        -:   18:/**
+        -:   19: * Destroys a list
+        -:   20: * @param l list to be destroyed
+        -:   21: */
+function destroy called 1 returned 100% blocks executed 100%
+        1:   22:void destroy(MyList* l) {
+        1:   23:	l->len = 0;
+        1:   24:}
+        -:   25:
+        -:   26:/**
+        -:   27: * Checks the length of the list
+        -:   28: * @param l list to be checked
+        -:   29: * @return how many elements are in the list
+        -:   30: */
+function size called 28 returned 100% blocks executed 100%
+       28:   31:int size(MyList* l) {
+       28:   32:    return l->len;
+       28:   32-block  0
+        -:   33:}
+        -:   34:
+        -:   35:/**
+        -:   36: * Finds the element in a list at a certain position
+        -:   37: * @param l list to be searched
+        -:   38: * @param poz position searched
+        -:   39: * @return element found
+        -:   40: */
+function get called 6 returned 100% blocks executed 100%
+        6:   41:ElemType get(MyList* l, int poz) {
+        6:   42:	return l->elems[poz];
+        6:   42-block  0
+        -:   43:}
+        -:   44:
+        -:   45:/**
+        -:   46: * Adds a new element at the end of the list
+        -:   47: * @param l list to be added to
+        -:   48: * @param el element to be added
+        -:   49: */
+function add called 4 returned 100% blocks executed 100%
+        4:   50:void add(MyList* l, ElemType el) {
+        4:   51:	l->elems[l->len] = el;
+        4:   52:	l->len++;
+        4:   53:}
+        -:   54:
+        -:   55:/**
+        -:   56: * Updates an element of the list
+        -:   57: * @param l list to be added to
+        -:   58: * @param poz position searched
+        -:   59: * @param el element to be added
+        -:   60: */
+function put called 1 returned 100% blocks executed 100%
+        1:   61:void put(MyList* l, int poz, ElemType el) {
+        1:   62:	l->elems[poz] = el;
+        1:   63:}
+        -:   64:
+        -:   65:/**
+        -:   66: * Deletes element at given position
+        -:   67: * @param l list to delete from
+        -:   68: * @param poz position to delete from
+        -:   69: */
+function delete called 1 returned 100% blocks executed 100%
+        1:   70:void delete(MyList* l, int poz) {
+        2:   71:    for (int i = poz; i < l->len - 1; i++)
+        1:   71-block  0
+        2:   71-block  1
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:   72:        l->elems[i] = l->elems[i+1];
+        1:   72-block  0
+        1:   73:    l->len--;
+        1:   74:}
+        -:   75:
+        -:   76:/**
+        -:   77: * Checks if list contains element
+        -:   78: * @param l list to be searched
+        -:   79: * @param el element to be searched
+        -:   80: * @return 1 if it contains, 0 otherwise
+        -:   81: */
+function contains called 5 returned 100% blocks executed 100%
+        5:   82:int contains(MyList* l, ElemType el) {
+        6:   83:    for (int i = 0; i < size(l); i++)
+        5:   83-block  0
+        1:   83-block  1
+        6:   83-block  2
+call    0 returned 6
+branch  1 taken 2
+branch  2 taken 4 (fallthrough)
+        2:   84:        if (compareParticipant(el, get(l, i)) == 0)
+        2:   84-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:   85:            return 1;
+        1:   85-block  0
+        4:   86:    return 0;
+        4:   86-block  0
+        -:   87:}
+        -:   88:
+function testDestroyList called 1 returned 100% blocks executed 86%
+        1:   89:void testDestroyList() {
+        1:   90:    MyList l = create();
+        1:   90-block  0
+call    0 returned 1
+        1:   91:    destroy(&l);
+call    0 returned 1
+       1*:   92:    assert(size(&l)==0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   92-block  0
+call    3 never executed
+        1:   92-block  1
+        1:   93:}

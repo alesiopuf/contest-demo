@@ -1,0 +1,245 @@
+        -:    0:Source:C:/Users/user/CLionProjects/POO_Lab_2-4/main.c
+        -:    0:Graph:C:\Users\user\CLionProjects\POO_Lab_2-4\cmake-build-debug-coverage\CMakeFiles\POO_Lab_2_4.dir\main.c.gcno
+        -:    0:Data:C:\Users\user\CLionProjects\POO_Lab_2-4\cmake-build-debug-coverage\CMakeFiles\POO_Lab_2_4.dir\main.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "header/participant.h"
+        -:    2:#include "header/mylist.h"
+        -:    3:#include "header/service.h"
+        -:    4:
+        -:    5:#include <stdio.h>
+        -:    6:
+        -:    7://CONCURS DE PROGRAMARE
+        -:    8:
+        -:    9:
+function test called 1 returned 100% blocks executed 100%
+        1:   10:void test() {
+        1:   11:    testAddParticipant();
+        1:   11-block  0
+call    0 returned 1
+        1:   12:    testUpdateParticipant();
+call    0 returned 1
+        1:   13:    testDeleteParticipant();
+call    0 returned 1
+        1:   14:    testDestructParticipant();
+call    0 returned 1
+        1:   15:    testDestroyList();
+call    0 returned 1
+        1:   16:}
+        -:   17:
+        -:   18:/// Prints the application menu
+function print_menu called 1 returned 100% blocks executed 100%
+        1:   19:void print_menu() {
+        1:   20:    printf("\n********MENIU********\n");
+        1:   20-block  0
+call    0 returned 1
+        1:   21:    printf("1. Adauga participant\n");
+call    0 returned 1
+        1:   22:    printf("2. Actualizeaza participant\n");
+call    0 returned 1
+        1:   23:    printf("3. Sterge participanti\n");
+call    0 returned 1
+        1:   24:    printf("4. Filtreaza participanti\n");
+call    0 returned 1
+        1:   25:    printf("5. Sorteaza participanti\n");
+call    0 returned 1
+        1:   26:    printf("6. Iesire\n\n");
+call    0 returned 1
+        1:   27:}
+        -:   28:
+function addMenuParticipant called 0 returned 0% blocks executed 0%
+    #####:   29:void addMenuParticipant(MyList* l) {
+    #####:   30:    printf("Nume: ");
+    %%%%%:   30-block  0
+call    0 never executed
+        -:   31:    char nume[30];
+    #####:   32:    scanf_s("%s", nume, 30);
+call    0 never executed
+    #####:   33:    printf("Prenume: ");
+call    0 never executed
+        -:   34:    char prenume[30];
+    #####:   35:    scanf_s("%s", prenume, 30);
+call    0 never executed
+    #####:   36:    printf("Scor:");
+call    0 never executed
+        -:   37:    float scor;
+    #####:   38:    scanf_s("%f", &scor);
+call    0 never executed
+    #####:   39:    int error = addParticipant(l, constructParticipant(nume, prenume, scor));
+call    0 never executed
+call    1 never executed
+    #####:   40:    if (error != 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   41:        printf("Participant invalid.\n");
+    %%%%%:   41-block  0
+call    0 never executed
+        -:   42:    }
+        -:   43:    else {
+    #####:   44:        printf("Participant adaugat.\n");
+    %%%%%:   44-block  0
+call    0 never executed
+        -:   45:    }
+    #####:   46:}
+        -:   47:
+function updateMenuParticipant called 0 returned 0% blocks executed 0%
+    #####:   48:void updateMenuParticipant(MyList* l) {
+    #####:   49:    printf("Nume vechi: ");
+    %%%%%:   49-block  0
+call    0 never executed
+        -:   50:    char nume[30];
+    #####:   51:    scanf_s("%s", nume, 30);
+call    0 never executed
+    #####:   52:    printf("Prenume vechi: ");
+call    0 never executed
+        -:   53:    char prenume[30];
+    #####:   54:    scanf_s("%s", prenume, 30);
+call    0 never executed
+    #####:   55:    printf("Scor vechi:");
+call    0 never executed
+        -:   56:    float scor;
+    #####:   57:    scanf_s("%f", &scor);
+call    0 never executed
+    #####:   58:    printf("Nume nou: ");
+call    0 never executed
+        -:   59:    char numenou[30];
+    #####:   60:    scanf_s("%s", numenou, 30);
+call    0 never executed
+    #####:   61:    printf("Prenume nou: ");
+call    0 never executed
+        -:   62:    char prenumenou[30];
+    #####:   63:    scanf_s("%s", prenumenou, 30);
+call    0 never executed
+    #####:   64:    printf("Scor nou:");
+call    0 never executed
+        -:   65:    float scornou;
+    #####:   66:    scanf_s("%f", &scornou);
+call    0 never executed
+    #####:   67:    int error = updateParticipant(l, constructParticipant(nume, prenume, scor),
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   68:                                  constructParticipant(numenou, prenumenou, scornou));
+    #####:   69:    if (error != 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   70:        printf("Participant invalid.\n");
+    %%%%%:   70-block  0
+call    0 never executed
+        -:   71:    }
+        -:   72:    else {
+    #####:   73:        printf("Participant modificat.\n");
+    %%%%%:   73-block  0
+call    0 never executed
+        -:   74:    }
+    #####:   75:}
+        -:   76:
+function deleteMenuParticipant called 0 returned 0% blocks executed 0%
+    #####:   77:void deleteMenuParticipant(MyList* l) {
+    #####:   78:    printf("Nume: ");
+    %%%%%:   78-block  0
+call    0 never executed
+        -:   79:    char nume[30];
+    #####:   80:    scanf_s("%s", nume, 30);
+call    0 never executed
+    #####:   81:    printf("Prenume: ");
+call    0 never executed
+        -:   82:    char prenume[30];
+    #####:   83:    scanf_s("%s", prenume, 30);
+call    0 never executed
+    #####:   84:    printf("Scor:");
+call    0 never executed
+        -:   85:    float scor;
+    #####:   86:    scanf_s("%f", &scor);
+call    0 never executed
+    #####:   87:    int error = deleteParticipant(l, constructParticipant(nume, prenume, scor));
+call    0 never executed
+call    1 never executed
+    #####:   88:    if (error != 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   89:        printf("Participant invalid.\n");
+    %%%%%:   89-block  0
+call    0 never executed
+        -:   90:    }
+        -:   91:    else {
+    #####:   92:        printf("Participant adaugat.\n");
+    %%%%%:   92-block  0
+call    0 never executed
+        -:   93:    }
+    #####:   94:}
+        -:   95:
+        -:   96:
+function run called 1 returned 0% blocks executed 32%
+        1:   97:void run() {
+        1:   98:    MyList database = create();
+        1:   98-block  0
+call    0 returned 1
+        1:   99:    int exit = 1;
+        1:  100:    while (exit) {
+        1:  100-block  0
+branch  0 taken 1
+branch  1 taken 0 (fallthrough)
+        1:  101:        print_menu();
+        1:  101-block  0
+call    0 returned 1
+        -:  102:        int option;
+        1:  103:        printf("Introduceti optiunea dvs: ");
+call    0 returned 1
+        1:  104:        scanf("%d", &option);
+call    0 returned 0
+    #####:  105:        switch (option) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  106:            case 1:
+    #####:  107:                addMenuParticipant(&database);
+    %%%%%:  107-block  0
+call    0 never executed
+    #####:  108:                break;
+    #####:  109:            case 2:
+    #####:  110:                updateMenuParticipant(&database);
+    %%%%%:  110-block  0
+call    0 never executed
+    #####:  111:                break;
+    #####:  112:            case 3:
+    #####:  113:                deleteMenuParticipant(&database);
+    %%%%%:  113-block  0
+call    0 never executed
+    #####:  114:                break;
+    #####:  115:            case 4:
+    #####:  116:                break;
+    %%%%%:  116-block  0
+    #####:  117:            case 5:
+    #####:  118:                break;
+    %%%%%:  118-block  0
+    #####:  119:            case 6:
+    #####:  120:                destroy(&database);
+    %%%%%:  120-block  0
+call    0 never executed
+    #####:  121:                exit = 0;
+    #####:  122:                break;
+    #####:  123:            default:
+    #####:  124:                printf("OPTIUNE INVALIDA!");
+    %%%%%:  124-block  0
+call    0 never executed
+        -:  125:        }
+    #####:  126:        printf("Lungimea listei este %d", size(&database));
+    %%%%%:  126-block  0
+call    0 never executed
+call    1 never executed
+        -:  127:    }
+    #####:  128:}
+        -:  129:
+function main called 1 returned 0% blocks executed 75%
+        1:  130:int main() {
+        1:  131:    test();
+        1:  131-block  0
+call    0 returned 1
+        1:  132:    run();
+call    0 returned 0
+    #####:  133:    return 0;
+        -:  134:}

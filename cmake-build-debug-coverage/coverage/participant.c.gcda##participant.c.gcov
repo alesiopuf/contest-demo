@@ -1,0 +1,121 @@
+        -:    0:Source:C:/Users/user/CLionProjects/POO_Lab_2-4/src/participant.c
+        -:    0:Graph:C:\Users\user\CLionProjects\POO_Lab_2-4\cmake-build-debug-coverage\CMakeFiles\POO_Lab_2_4.dir\src\participant.c.gcno
+        -:    0:Data:C:\Users\user\CLionProjects\POO_Lab_2-4\cmake-build-debug-coverage\CMakeFiles\POO_Lab_2_4.dir\src\participant.c.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by user on 3/13/2024.
+        -:    3://
+        -:    4:#include "../header/participant.h"
+        -:    5:
+        -:    6:#include <string.h>
+        -:    7:#include <assert.h>
+        -:    8:
+        -:    9:/**
+        -:   10: * Initializes a participant
+        -:   11: * @param nume surname of participant
+        -:   12: * @param prenume name of participant
+        -:   13: * @param scor score of participant
+        -:   14: * @return A now participant struct with fields having the parameter values
+        -:   15: */
+function constructParticipant called 16 returned 100% blocks executed 100%
+       16:   16:Participant constructParticipant(char* nume, char* prenume, float scor) {
+        -:   17:    Participant participant;
+       16:   18:    strcpy(participant.nume, nume);
+       16:   19:    strcpy(participant.prenume, prenume);
+       16:   20:    participant.scor = scor;
+       16:   21:    return participant;
+       16:   21-block  0
+        -:   22:}
+        -:   23:
+        -:   24:/**
+        -:   25: * Destorys a participant
+        -:   26: * @param participant The participant to be destoryed
+        -:   27: */
+function destructParticipant called 1 returned 100% blocks executed 100%
+        1:   28:void destructParticipant(Participant* participant) {
+        1:   29:    participant->nume[0] = '\0';
+        1:   30:    participant->prenume[0] = '\0';
+        1:   31:    participant->scor = -1;
+        1:   32:}
+        -:   33:
+        -:   34:/**
+        -:   35: * Compares two participants
+        -:   36: * @param p1 first part
+        -:   37: * @param p2 second part
+        -:   38: * @return 0 if they have same content
+        -:   39: */
+function compareParticipant called 6 returned 100% blocks executed 100%
+        6:   40:int compareParticipant(Participant p1, Participant p2) {
+        6:   41:    if (strcmp(p1.nume,p2.nume) != 0 || strcmp(p1.prenume,p2.prenume) != 0 || p1.scor != p2.scor)
+        6:   41-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 2
+        4:   41-block  1
+branch  2 taken 3 (fallthrough)
+branch  3 taken 1
+        3:   41-block  2
+branch  4 taken 0 (fallthrough)
+branch  5 taken 3
+        3:   42:        return 1;
+        3:   42-block  0
+        3:   43:    return 0;
+        3:   43-block  0
+        -:   44:}
+        -:   45:
+        -:   46:/**
+        -:   47: * Validates an already created participant
+        -:   48: * @param participant Participant to be validated
+        -:   49: * @return 0 if the participant is valid, and 1,2,3 otherwise, depending on the invalid field
+        -:   50: */
+function validateParticipant called 10 returned 100% blocks executed 100%
+       10:   51:int validateParticipant(Participant participant) {
+       10:   52:    if (strlen(participant.nume) == 0)
+       10:   52-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 9
+        1:   53:        return 1;
+        1:   53-block  0
+        9:   54:    if (strlen(participant.prenume) == 0)
+        9:   54-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 8
+        1:   55:        return 2;
+        1:   55-block  0
+        8:   56:    if (participant.scor < 0)
+        8:   56-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 7
+        1:   57:        return 3;
+        1:   57-block  0
+        7:   58:    return 0;
+        7:   58-block  0
+        -:   59:}
+        -:   60:
+function testDestructParticipant called 1 returned 100% blocks executed 75%
+        1:   61:void testDestructParticipant() {
+        1:   62:    Participant participant = constructParticipant("puf", "a", 10);
+        1:   62-block  0
+call    0 returned 1
+        1:   63:    destructParticipant(&participant);
+call    0 returned 1
+       1*:   64:    assert(strlen(participant.nume)==0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   64-block  0
+call    2 never executed
+        1:   64-block  1
+       1*:   65:    assert(strlen(participant.prenume)==0);
+        1:   65-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   65-block  1
+call    2 never executed
+        1:   65-block  2
+       1*:   66:    assert(participant.scor==-1);
+        1:   66-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   66-block  1
+call    2 never executed
+        1:   66-block  2
+        1:   67:}
